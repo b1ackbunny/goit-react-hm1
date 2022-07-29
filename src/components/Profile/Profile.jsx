@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types'
 import s from './Profile.module.css'
 
-export  function Profile({ imgUrl, name, tag, location, followers, views, likes }) {
+export  function Profile({ imgUrl, name, tag, location, stats }) {
   return (
     <div className={s.profile}>
       <div className={s.description}>
@@ -19,15 +19,15 @@ export  function Profile({ imgUrl, name, tag, location, followers, views, likes 
       <ul className={s.stats}>
         <li className={s.items}>
           <span className={s.label}>Followers</span>
-          <span className={s.quantity}>{followers}</span>
+          <span className={s.quantity}>{stats.followers}</span>
         </li>
         <li className={s.items}>
           <span className={s.label}>Views</span>
-          <span className={s.quantity}>{views}</span>
+          <span className={s.quantity}>{stats.views}</span>
         </li>
         <li className={s.items}>
           <span className={s.label}>Likes</span>
-          <span className={s.quantity}>{likes}</span>
+          <span className={s.quantity}>{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -35,12 +35,9 @@ export  function Profile({ imgUrl, name, tag, location, followers, views, likes 
 }
 
 Profile.propTypes = {
-    imgUrl: PropTypes.string,
-    name: PropTypes.string,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number
-
+    imgUrl: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    stats: PropTypes.number.isRequired,
 }

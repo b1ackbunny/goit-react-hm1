@@ -3,17 +3,17 @@ import React from 'react';
 import Container from './Container/Container';
 
 import { Profile } from './Profile/Profile';
-import user from '../user.json'
+import user from '../components/data/user.json'
 
 import { StatisticsList } from './Statistics/StatisticsList';
-import statistics from '../statistics.json'
+import statistics from '../components/data/statistics.json'
 
-import { FriendListItem } from './FriendList/FriendListItem';
-import friends from '../friends.json'
+import { FriendList } from './FriendList/FriendList';
+import friends from '../components/data/friends.json'
 
 
 import { TransactionsHistory } from './TransactionsHistory/TransactionsHistory';
-import transactions from '../transactions.json'
+import transactions from '../components/data/transactions.json'
 
 export  function App() {
   return (
@@ -24,14 +24,12 @@ export  function App() {
       name={user.username}
       tag={user.tag}
       location={user.location}
-      followers={user.stats.followers}
-      views={user.stats.views}
-      likes={user.stats.likes}
+      stats={user.stats}
       /> 
       <StatisticsList 
     title="Upload stats"
     stats={statistics} /> 
-      <FriendListItem 
+      <FriendList
       friends={friends} 
       />
       <TransactionsHistory 
