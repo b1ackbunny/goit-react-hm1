@@ -8,7 +8,7 @@ export  function StatisticsList({ title,  stats }) {
 
   return (
     <section className={s.statistics}>
-      <h2 className={s.title}>{title && title}</h2>
+      <h2 className={s.title}>{title && <h2>{title}</h2>}</h2>
       <ul className={s.statList}>
         {stats.map(({id, label, percentage}) => (
             <li className={s.item}  key={id} >
